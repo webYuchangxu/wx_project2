@@ -11,14 +11,16 @@
     </van-collapse-item>
     <van-collapse-item title="联系我" name="tel">
       <view class="icon-list">
-        <van-icon wx:for="{{tel}}" wx:key="{{item.name}}"  bindtap="telMe" data-name="{{item.name}}" name="{{item.name}}" size="50rpx" />
+        <van-icon wx:for="{{tel}}" wx:key="{{item.name}}" bindtap="telMe" data-name="{{item.name}}" name="{{item.name}}" size="50rpx" />
       </view>
-    <view class="qrcode" wx:if="{{showQrCode}}">
-      <van-image width="285" height="370" src="{{qrCodeBase64}}" show-menu-by-longpress="true" />
-    </view>
-    <view class="telephone" wx:if="{{showTelephone}}" bind:longtap="copy" data-value="+86 178 4096 1025">
-      <text>+86 178 4096 1025</text>
-    </view>
+      <view class="qrcode" wx:if="{{showQrCode}}">
+        <van-image width="285" height="370" src="{{qrCodeUrl}}" use-loading-slot="true" show-menu-by-longpress="true">
+          <van-loading slot="loading" type="spinner" size="50" />
+        </van-image>
+      </view>
+      <view class="telephone" wx:if="{{showTelephone}}" bind:longtap="copy" data-value="+86 178 4096 1025">
+        <text>+86 178 4096 1025</text>
+      </view>
     </van-collapse-item>
   </van-collapse>
 </view>
