@@ -1,0 +1,10 @@
+/**index.wxss**/
+.icon-list{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.qrcode,.telephone{
+  padding-top: 20rpx;
+  text-align: center;
+}
